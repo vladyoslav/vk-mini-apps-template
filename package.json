@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "@mntm/precoil": "^4.0.4",
-    "@unexp/router": "^1.0.0-beta9",
+    "@unexp/router": "1.0.0-beta10",
     "@vkontakte/icons": "^1.129.0",
     "@vkontakte/vk-bridge": "^2.4.8",
     "@vkontakte/vkui": "^4.17.0",
