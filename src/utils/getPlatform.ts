@@ -12,5 +12,5 @@ export const getPlatform = (): PlatformType => {
     window.location.search
   ).get('vk_platform')
 
-  return platforms[rawPlatform || 'android']
+  return platforms[rawPlatform || 'desktop_web']
 }
