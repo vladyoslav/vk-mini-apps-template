@@ -39,9 +39,8 @@ export const Navigation: React.FC<NavigationProps> = ({ children }: NavigationPr
     >
       <SplitCol
         animate={!isDesktop}
-        width={isDesktop ? '655px' : '100%'}
-        maxWidth={isDesktop ? '655px' : '100%'}
-        minWidth={isDesktop ? '655px' : '100%'}
+        width={isDesktop ? '550px' : '100%'}
+        maxWidth={isDesktop ? '550px' : '100%'}
       >
         <Match>
           <Epic tabbar={!isDesktop && <NavigationTabbar items={items} />}>
