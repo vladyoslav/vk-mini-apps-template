@@ -1,18 +1,14 @@
 import React from 'react'
-import { Button, ModalCard } from '@vkontakte/vkui'
+import { Button, ModalCard, ModalCardProps } from '@vkontakte/vkui'
 import { transition } from '@unexp/router'
 import { Icon56GhostOutline } from '@vkontakte/icons'
 
-type ModalProps = {
-  nav: string
-}
-
-export const Modal: React.FC<ModalProps> = (props: ModalProps) => {
+export const Modal: React.FC<ModalCardProps> = ({ nav }: ModalCardProps) => {
   const close = () => transition(-1)
 
   return (
     <ModalCard
-      nav={props.nav}
+      nav={nav}
       onClose={close}
       icon={<Icon56GhostOutline />}
       header='Это модальная карточка'
