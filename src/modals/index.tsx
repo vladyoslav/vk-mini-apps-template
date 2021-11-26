@@ -1,14 +1,14 @@
 import React from 'react'
-import { transition, useParams } from '@unexp/router'
 import { ModalRoot } from '@vkontakte/vkui'
 import { Modal } from './Modal'
+import { useRouter, useParams } from '@cteamdev/router'
 
 export const Modals = () => {
+  const { back } = useRouter()
   const { m = null } = useParams()
-  const close = () => transition(-1)
 
   return (
-    <ModalRoot activeModal={m} onClose={close}>
+    <ModalRoot activeModal={m} onClose={back}>
       <Modal nav='modal' />
     </ModalRoot>
   )
