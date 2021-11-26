@@ -1,6 +1,5 @@
 import React, { Ref, useRef } from 'react'
 import { Avatar, Group, Panel, PanelHeader, PanelProps, SimpleCell } from '@vkontakte/vkui'
-import { Link, transition } from '@unexp/router'
 import {
   Icon28BillheadOutline,
   Icon28ChevronRightOutline,
@@ -15,8 +14,10 @@ import { useAtomValue } from '@mntm/precoil'
 import { vkUserAtom } from '../store'
 import { setDoneSnackbar, setErrorSnackbar, setPopout } from '../hooks'
 import { TestActionSheet, TestAlert } from '../popouts'
+import { useRouter } from '@cteamdev/router'
 
 export const Home: React.FC<PanelProps> = ({ nav }: PanelProps) => {
+  const { push } = useRouter()
   const vkUser: UserInfo = useAtomValue(vkUserAtom)
   const ref: Ref<HTMLElement> = useRef<HTMLElement>(null)
 
@@ -34,19 +35,18 @@ export const Home: React.FC<PanelProps> = ({ nav }: PanelProps) => {
         </SimpleCell>
       </Group>
       <Group>
-        <Link to='/persik'>
-          <SimpleCell
-            before={<Icon28PawOutline />}
-            after={<Icon28ChevronRightOutline />}
-          >
-            Покажи Персика!
-          </SimpleCell>
-        </Link>
+        <SimpleCell
+          before={<Icon28PawOutline />}
+          after={<Icon28ChevronRightOutline />}
+          onClick={() => push('/persik')}
+        >
+          Покажи Персика!
+        </SimpleCell>
       </Group>
       <Group>
         <SimpleCell
           before={<Icon28BillheadOutline />}
-          onClick={() => transition('/?m=modal')}
+          onClick={() => push('/?m=modal')}
         >
           Покажи модальную карточку
         </SimpleCell>

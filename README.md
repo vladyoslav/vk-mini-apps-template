@@ -5,10 +5,12 @@
 * TypeScript
 * React
 * Библиотеку компонентов VKUI
-* Потрясающий роутер [@unexp/router](https://github.com/land47/router)
+* Роутер [@cteamdev/router](https://github.com/cteamdev/router)
 * [@mntm/precoil](https://github.com/maxi-team/precoil) в качестве стейт-менеджера
 * Инструмент для сборки Vite
 * Линтер ESLint
+
+Есть ветка с роутером [@unexp/router](https://github.com/land47/router)
 
 ## Установка
 [Создайте репозиторий, используя этот шаблон](https://github.com/vladyoslav/vk-mini-apps-template/generate)
