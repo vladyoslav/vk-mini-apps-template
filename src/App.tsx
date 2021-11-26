@@ -6,7 +6,7 @@ import {
   PlatformType
 } from '@vkontakte/vkui'
 import '@vkontakte/vkui/dist/vkui.css'
-import { useRouter, View } from '@cteamdev/router'
+import { View } from '@cteamdev/router'
 import { Home, Info, Persik } from './pages'
 import { Navigation } from './components/navigation'
 import { getPlatform } from './utils'
@@ -17,8 +17,6 @@ import bridge, { UserInfo } from '@vkontakte/vk-bridge'
 export const App: React.FC = () => {
   const platform: PlatformType = getPlatform()
   const setVkUser = useSetAtomState(vkUserAtom)
-  const { history } = useRouter()
-  console.log(history)
 
   useEffect(() => {
     const load = async () => {
