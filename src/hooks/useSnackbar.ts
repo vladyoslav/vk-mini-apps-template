@@ -1,4 +1,4 @@
-import { snackbarAtom } from '../store/atoms'
+import { snackbarAtom } from '../store'
 import { SnackbarType } from '../types'
 
 const setSnackbar = snackbarAtom.set

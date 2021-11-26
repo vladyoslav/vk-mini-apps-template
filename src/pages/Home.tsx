@@ -12,7 +12,7 @@ import {
 } from '@vkontakte/icons'
 import { UserInfo } from '@vkontakte/vk-bridge'
 import { useAtomValue } from '@mntm/precoil'
-import { vkUserAtom } from '../store/atoms'
+import { vkUserAtom } from '../store'
 import { setDoneSnackbar, setErrorSnackbar, setPopout } from '../hooks'
 import { TestActionSheet, TestAlert } from '../popouts'
 
