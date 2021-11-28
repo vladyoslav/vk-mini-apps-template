@@ -27,7 +27,7 @@
     "vite": "^2.6.10"
   },
   "dependencies": {
-    "@cteamdev/router": "^0.1.0",
+    "@cteamdev/router": "^0.2.6",
     "@mntm/precoil": "^4.0.4",
     "@vkontakte/icons": "^1.129.0",
     "@vkontakte/vk-bridge": "^2.4.8",

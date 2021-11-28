@@ -8,11 +8,9 @@ import {
   PanelProps
 } from '@vkontakte/vkui'
 import persikImage from '../assets/persik.png'
-import { useRouter } from '@cteamdev/router'
+import { back } from '@cteamdev/router'
 
 export const Persik: React.FC<PanelProps> = ({ nav }: PanelProps) => {
-  const { back } = useRouter()
-
   return (
     <Panel nav={nav}>
       <PanelHeader

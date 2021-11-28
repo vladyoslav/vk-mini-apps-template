@@ -1,8 +1,9 @@
 import React from 'react'
 import { Alert } from '@vkontakte/vkui'
-import { closePopout } from '../hooks'
+import { PopoutProps } from '../types'
+import { back } from '@cteamdev/router'
 
-export const TestAlert: React.FC = () => {
+export const TestAlert: React.FC<PopoutProps> = () => {
 
   return (
     <Alert
@@ -15,7 +16,7 @@ export const TestAlert: React.FC = () => {
         mode: 'cancel',
         autoclose: true
       }]}
-      onClose={closePopout}
+      onClose={back}
       header='Тестовый алерт'
       text='Это тестовый алерт!'
       actionsLayout='vertical'

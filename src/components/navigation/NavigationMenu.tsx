@@ -6,15 +6,14 @@ import {
   SplitCol
 } from '@vkontakte/vkui'
 import { NavigationItem } from '../../types'
-import { useRouter } from '@cteamdev/router'
+import { replace, useCurrentState } from '@cteamdev/router'
 
 type NavigationMenuProps = {
   items: NavigationItem[]
 }
 
 export const NavigationMenu: React.FC<NavigationMenuProps> = ({ items }: NavigationMenuProps) => {
-  const { state, replace } = useRouter()
-  const { view } = state
+  const { view } = useCurrentState()
 
   return (
     <SplitCol width='280px' maxWidth='280px' spaced fixed>

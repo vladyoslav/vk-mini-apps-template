@@ -12,9 +12,8 @@ import { NavigationTabbar } from './NavigationTabbar'
 import { Modals } from '../../modals'
 import { NavigationItem } from '../../types'
 import { CustomSnackbar } from '../snackbar/CustomSnackbar'
-import { useAtomValue } from '@mntm/precoil'
-import { popoutAtom } from '../../store'
 import { Structure, Epic } from '@cteamdev/router'
+import { Popouts } from '../../popouts'
 
 const items: NavigationItem[] = [
   { to: '/', text: 'Главная', icon: <Icon28UserCircleOutline /> },
@@ -28,7 +27,6 @@ type NavigationProps = {
 export const Navigation: React.FC<NavigationProps> = ({ children }: NavigationProps) => {
   const { viewWidth } = useAdaptivity()
   const isDesktop: boolean = (viewWidth ?? 0) >= ViewWidth.SMALL_TABLET
-  const popout = useAtomValue(popoutAtom)
 
   return (
     <Structure>
@@ -36,7 +34,7 @@ export const Navigation: React.FC<NavigationProps> = ({ children }: NavigationPr
         header={!isDesktop && <PanelHeader separator={false} />}
         style={{ justifyContent: 'center' }}
         modal={<Modals />}
-        popout={popout}
+        popout={<Popouts />}
       >
         <SplitCol
           animate={!isDesktop}
