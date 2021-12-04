@@ -8,16 +8,16 @@ type NavigationTabbarProps = {
 }
 
 export const NavigationTabbar: React.FC<NavigationTabbarProps> = ({ items }: NavigationTabbarProps) => {
-  const { root } = useDeserializedLocation()
+  const { view } = useDeserializedLocation()
 
   return (
     <Tabbar>
       {items.map(item =>
         <TabbarItem
           key={item.to}
-          selected={item.to === root}
+          selected={item.to === view}
           text={item.text}
-          onClick={() => item.to !== root && transition(item.to)}
+          onClick={() => item.to !== view && transition(item.to)}
         >
           {item.icon}
         </TabbarItem>

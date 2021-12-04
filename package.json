@@ -21,22 +21,21 @@
     "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-react": "^7.26.1",
-    "eslint-plugin-standard": "^5.0.0"
+    "eslint-plugin-standard": "^5.0.0",
+    "typescript": "^4.4.4"
   },
   "dependencies": {
     "@mntm/precoil": "^4.0.4",
-    "@unexp/router": "1.0.0-beta10",
+    "@unexp/router": "1.0.0-beta12",
     "@vkontakte/icons": "^1.129.0",
     "@vkontakte/vk-bridge": "^2.4.8",
     "@vkontakte/vkui": "^4.17.0",
     "eruda": "^2.4.1",
     "eruda-code": "^2.0.0",
     "eruda-dom": "^2.0.0",
-    "global": "^4.4.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
-    "typescript": "^4.1.2"
+    "react-scripts": "4.0.3"
   },
   "browserslist": {
     "production": [

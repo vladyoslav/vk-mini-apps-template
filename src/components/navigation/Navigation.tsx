@@ -40,7 +40,7 @@ export const Navigation: React.FC<NavigationProps> = ({ children }: NavigationPr
         minWidth={isDesktop ? '655px' : '100%'}
       >
         <Match>
-          <Epic tabbar={!isDesktop ? <NavigationTabbar items={items} /> : <></>}>
+          <Epic tabbar={!isDesktop && <NavigationTabbar items={items} />}>
             {children}
           </Epic>
         </Match>
