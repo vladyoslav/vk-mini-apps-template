@@ -2047,10 +2047,10 @@
     "@typescript-eslint/types" "4.33.0"
     eslint-visitor-keys "^2.0.0"
 
-"@unexp/router@1.0.0-beta12":
-  version "1.0.0-beta12"
-  resolved "https://registry.yarnpkg.com/@unexp/router/-/router-1.0.0-beta12.tgz#7f51d1b0d49e1269db0cd0bbde76c8f74b47f0ce"
-  integrity sha512-ycN1QHqtZa1MLsdT8B7gdt1NJJWr9H7PGQBhLZXiuRpUdR8zdI0MThJfsRWOfWh3nb1qHoib6Gt26ilhYAIOrg==
+"@unexp/router@1.0.0-beta14":
+  version "1.0.0-beta14"
+  resolved "https://registry.yarnpkg.com/@unexp/router/-/router-1.0.0-beta14.tgz#60966d85e471163d420b4c6c402ba9966ee73562"
+  integrity sha512-ahxnvLjdLACqnUZ1AL8HMGtKg0SdncCdCPeIFmSx4DMZy1C8OuoS+TmFa2/D8+3nu908nzXdcaVgYns/QPUDfQ==
   dependencies:
     react-children-utilities "^2.6.0"
 
