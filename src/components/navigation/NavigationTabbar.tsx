@@ -17,7 +17,7 @@ export const NavigationTabbar: React.FC<NavigationTabbarProps> = ({ items }: Nav
           key={item.to}
           selected={item.to === view}
           text={item.text}
-          onClick={() => item.to !== view && transition(item.to)}
+          onClick={() => item.to !== view && transition(item.to, { replace: true })}
         >
           {item.icon}
         </TabbarItem>
