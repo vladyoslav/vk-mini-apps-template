@@ -1,16 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { App } from './App'
-import { Router, RouterProvider } from '@cteamdev/router'
+import { init, Router } from '@cteamdev/router'
 import './bridge'
 
-const router = new Router()
-router.start()
+init()
 
 ReactDOM.render(
-  <RouterProvider value={router}>
+  <Router>
     <App />
-  </RouterProvider>,
+  </Router>,
   document.getElementById('root')
 )
 

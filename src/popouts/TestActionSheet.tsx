@@ -1,19 +1,16 @@
-import React from 'react'
+import React, { Ref, useRef } from 'react'
 import { ActionSheet, ActionSheetItem } from '@vkontakte/vkui'
-import { ToggleRef } from '@vkontakte/vkui/dist/components/ActionSheet/types'
-import { closePopout } from '../hooks'
+import { PopoutProps } from '../types'
+import { back } from '@cteamdev/router'
 
-type TestActionSheetProps = {
-  toggleRef: ToggleRef
-}
-
-export const TestActionSheet: React.FC<TestActionSheetProps> = ({ toggleRef }: TestActionSheetProps) => {
+export const TestActionSheet: React.FC<PopoutProps> = () => {
+  const ref: Ref<HTMLElement> = useRef<HTMLElement>(document.getElementById('ShowAlert'))
 
   return (
     <ActionSheet
-      onClose={closePopout}
+      onClose={back}
       iosCloseItem={<ActionSheetItem autoclose mode='cancel'>Отменить</ActionSheetItem>}
-      toggleRef={toggleRef}
+      toggleRef={ref}
     >
       <ActionSheetItem autoclose>
         Это первая опция

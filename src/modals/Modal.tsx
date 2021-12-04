@@ -1,11 +1,9 @@
 import React from 'react'
 import { Button, ModalCard, ModalCardProps } from '@vkontakte/vkui'
 import { Icon56GhostOutline } from '@vkontakte/icons'
-import { useRouter } from '@cteamdev/router'
+import { back } from '@cteamdev/router'
 
 export const Modal: React.FC<ModalCardProps> = ({ nav }: ModalCardProps) => {
-  const { back } = useRouter()
-
   return (
     <ModalCard
       nav={nav}

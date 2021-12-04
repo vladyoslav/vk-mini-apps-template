@@ -1,15 +1,14 @@
 import React from 'react'
 import { Tabbar, TabbarItem } from '@vkontakte/vkui'
 import { NavigationItem } from '../../types'
-import { useRouter } from '@cteamdev/router'
+import { replace, useCurrentState } from '@cteamdev/router'
 
 type NavigationTabbarProps = {
   items: NavigationItem[]
 }
 
 export const NavigationTabbar: React.FC<NavigationTabbarProps> = ({ items }: NavigationTabbarProps) => {
-  const { state, replace } = useRouter()
-  const { view } = state
+  const { view } = useCurrentState()
 
   return (
     <Tabbar>

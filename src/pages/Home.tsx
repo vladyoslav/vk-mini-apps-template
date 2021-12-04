@@ -1,4 +1,4 @@
-import React, { Ref, useRef } from 'react'
+import React from 'react'
 import { Avatar, Group, Panel, PanelHeader, PanelProps, SimpleCell } from '@vkontakte/vkui'
 import {
   Icon28BillheadOutline,
@@ -12,14 +12,11 @@ import {
 import { UserInfo } from '@vkontakte/vk-bridge'
 import { useAtomValue } from '@mntm/precoil'
 import { vkUserAtom } from '../store'
-import { setDoneSnackbar, setErrorSnackbar, setPopout } from '../hooks'
-import { TestActionSheet, TestAlert } from '../popouts'
-import { useRouter } from '@cteamdev/router'
+import { setDoneSnackbar, setErrorSnackbar } from '../hooks'
+import { push } from '@cteamdev/router'
 
 export const Home: React.FC<PanelProps> = ({ nav }: PanelProps) => {
-  const { push } = useRouter()
   const vkUser: UserInfo = useAtomValue(vkUserAtom)
-  const ref: Ref<HTMLElement> = useRef<HTMLElement>(null)
 
   return (
     <Panel nav={nav}>
@@ -46,7 +43,7 @@ export const Home: React.FC<PanelProps> = ({ nav }: PanelProps) => {
       <Group>
         <SimpleCell
           before={<Icon28BillheadOutline />}
-          onClick={() => push('/?m=modal')}
+          onClick={() => push('/?modal=modal')}
         >
           Покажи модальную карточку
         </SimpleCell>
@@ -54,14 +51,14 @@ export const Home: React.FC<PanelProps> = ({ nav }: PanelProps) => {
       <Group>
         <SimpleCell
           before={<Icon28WarningTriangleOutline />}
-          onClick={() => setPopout(<TestAlert />)}
+          onClick={() => push('/?popout=alert')}
         >
           Покажи алерт
         </SimpleCell>
         <SimpleCell
+          id='ShowAlert'
           before={<Icon28ArticleOutline />}
-          getRootRef={ref}
-          onClick={() => setPopout(<TestActionSheet toggleRef={ref.current} />)}
+          onClick={() => push('/?popout=action-sheet')}
         >
           Покажи список опций
         </SimpleCell>
