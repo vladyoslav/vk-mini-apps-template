@@ -1,4 +1,5 @@
 import { ANDROID, IOS, VKCOM, PlatformType } from '@vkontakte/vkui'
+import { getHashParam } from './getHashParam'
 
 const platforms: Record<string, PlatformType> = {
   iphone: IOS,
@@ -8,9 +9,7 @@ const platforms: Record<string, PlatformType> = {
 }
 
 export const getPlatform = (): PlatformType => {
-  const rawPlatform: string | null = new URLSearchParams(
-    window.location.search
-  ).get('vk_platform')
+  const rawPlatform: string | null = getHashParam('vk_platform')
 
   return platforms[rawPlatform || 'desktop_web']
 }
