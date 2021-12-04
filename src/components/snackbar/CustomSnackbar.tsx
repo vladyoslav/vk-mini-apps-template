@@ -1,6 +1,6 @@
 import React from 'react'
 import { useAtomState } from '@mntm/precoil'
-import { snackbarAtom } from '../../store/atoms'
+import { snackbarAtom } from '../../store'
 import { SnackbarType } from '../../types'
 import { Icon20CancelCircleFillRed, Icon20CheckCircleFillGreen } from '@vkontakte/icons'
 import { Snackbar } from '@vkontakte/vkui'

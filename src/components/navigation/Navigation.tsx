@@ -14,7 +14,7 @@ import { Modals } from '../../modals'
 import { NavigationItem } from '../../types'
 import { CustomSnackbar } from '../snackbar/CustomSnackbar'
 import { useAtomValue } from '@mntm/precoil'
-import { popoutAtom } from '../../store/atoms'
+import { popoutAtom } from '../../store'
 
 const items: NavigationItem[] = [
   { to: '/', text: 'Главная', icon: <Icon28UserCircleOutline /> },

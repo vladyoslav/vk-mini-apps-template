@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
-import { 
+import {
   AdaptivityProvider,
   AppRoot,
-  ConfigProvider, 
+  ConfigProvider,
   PlatformType
 } from '@vkontakte/vkui'
 import '@vkontakte/vkui/dist/vkui.css'
@@ -11,7 +11,7 @@ import { Home, Info, Persik } from './pages'
 import { Navigation } from './components/navigation'
 import { getPlatform } from './utils/getPlatform'
 import { useSetAtomState } from '@mntm/precoil'
-import { vkUserAtom } from './store/atoms'
+import { vkUserAtom } from './store'
 import bridge, { UserInfo } from '@vkontakte/vk-bridge'
 
 export const App: React.FC = () => {
@@ -26,7 +26,7 @@ export const App: React.FC = () => {
 
     load()
   }, [])
-  
+
   return (
     <ConfigProvider platform={platform}>
       <AdaptivityProvider>
