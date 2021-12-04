@@ -248,6 +248,14 @@
     "@babel/helper-validator-identifier" "^7.14.9"
     to-fast-properties "^2.0.0"
 
+"@cteamdev/router@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@cteamdev/router/-/router-0.1.0.tgz#c0dbe38dcfc75489033961e4c6d5d704be6d8a43"
+  integrity sha512-N7J9Fo5AA8ht3RggA3ncG5oZ5hJXWLrm61OmyNR+dgoEZ+7iETIPWq3730UG6x/IVTBgX0XyAYuhghWhOWJImw==
+  dependencies:
+    querystring "^0.2.1"
+    react-children-utilities "^2.6.3"
+
 "@eslint/eslintrc@^0.4.3":
   version "0.4.3"
   resolved "https://registry.yarnpkg.com/@eslint/eslintrc/-/eslintrc-0.4.3.tgz#9e42981ef035beb3dd49add17acb96e8ff6f394c"
@@ -434,13 +442,6 @@
   dependencies:
     "@typescript-eslint/types" "4.33.0"
     eslint-visitor-keys "^2.0.0"
-
-"@unexp/router@1.0.0-beta14":
-  version "1.0.0-beta14"
-  resolved "https://registry.yarnpkg.com/@unexp/router/-/router-1.0.0-beta14.tgz#60966d85e471163d420b4c6c402ba9966ee73562"
-  integrity sha512-ahxnvLjdLACqnUZ1AL8HMGtKg0SdncCdCPeIFmSx4DMZy1C8OuoS+TmFa2/D8+3nu908nzXdcaVgYns/QPUDfQ==
-  dependencies:
-    react-children-utilities "^2.6.0"
 
 "@vitejs/plugin-react-refresh@^1.3.6":
   version "1.3.6"
@@ -2972,12 +2973,17 @@ query-string@^4.3.2:
     object-assign "^4.1.0"
     strict-uri-encode "^1.0.0"
 
+querystring@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/querystring/-/querystring-0.2.1.tgz#40d77615bb09d16902a85c3e38aa8b5ed761c2dd"
+  integrity sha512-wkvS7mL/JMugcup3/rMitHmd9ecIGd2lhFhK9N3UUQ450h66d1r3Y9nvXzQAW1Lq+wyx61k/1pfKS5KuKiyEbg==
+
 queue-microtask@^1.2.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/queue-microtask/-/queue-microtask-1.2.2.tgz#abf64491e6ecf0f38a6502403d4cda04f372dfd3"
   integrity sha512-dB15eXv3p2jDlbOiNLyMabYg1/sXvppd8DP2J3EOCQ0AkuSXCW2tP7mnVouVLJKgUMY6yP0kcQDVpLCN13h4Xg==
 
-react-children-utilities@^2.6.0:
+react-children-utilities@^2.6.3:
   version "2.6.3"
   resolved "https://registry.yarnpkg.com/react-children-utilities/-/react-children-utilities-2.6.3.tgz#137dea9b140863639448073a91fd4eda68a3101b"
   integrity sha512-ncP/JU26u/V8PyORIUzR2+yMb8YSGKLMbaqo9xwvQlNUAXMyUk2mja4torT7HKvGAzknMPR9Qnl2U6c7KD4kZw==

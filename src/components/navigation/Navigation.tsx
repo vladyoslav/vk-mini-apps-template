@@ -6,7 +6,6 @@ import {
   useAdaptivity,
   ViewWidth
 } from '@vkontakte/vkui'
-import { Epic, Match } from '@unexp/router'
 import { NavigationMenu } from './NavigationMenu'
 import { Icon28InfoOutline, Icon28UserCircleOutline } from '@vkontakte/icons'
 import { NavigationTabbar } from './NavigationTabbar'
@@ -15,6 +14,7 @@ import { NavigationItem } from '../../types'
 import { CustomSnackbar } from '../snackbar/CustomSnackbar'
 import { useAtomValue } from '@mntm/precoil'
 import { popoutAtom } from '../../store'
+import { Structure, Epic } from '@cteamdev/router'
 
 const items: NavigationItem[] = [
   { to: '/', text: 'Главная', icon: <Icon28UserCircleOutline /> },
@@ -31,25 +31,25 @@ export const Navigation: React.FC<NavigationProps> = ({ children }: NavigationPr
   const popout = useAtomValue(popoutAtom)
 
   return (
-    <SplitLayout
-      header={!isDesktop && <PanelHeader separator={false} />}
-      style={{ justifyContent: 'center' }}
-      modal={<Modals />}
-      popout={popout}
-    >
-      <SplitCol
-        animate={!isDesktop}
-        width={isDesktop ? '550px' : '100%'}
-        maxWidth={isDesktop ? '550px' : '100%'}
+    <Structure>
+      <SplitLayout
+        header={!isDesktop && <PanelHeader separator={false} />}
+        style={{ justifyContent: 'center' }}
+        modal={<Modals />}
+        popout={popout}
       >
-        <Match>
+        <SplitCol
+          animate={!isDesktop}
+          width={isDesktop ? '550px' : '100%'}
+          maxWidth={isDesktop ? '550px' : '100%'}
+        >
           <Epic tabbar={!isDesktop && <NavigationTabbar items={items} />}>
             {children}
           </Epic>
-        </Match>
-        <CustomSnackbar isDesktop={isDesktop} />
-      </SplitCol>
-      {isDesktop && <NavigationMenu items={items} />}
-    </SplitLayout>
+          <CustomSnackbar isDesktop={isDesktop} />
+        </SplitCol>
+        {isDesktop && <NavigationMenu items={items} />}
+      </SplitLayout>
+    </Structure>
   )
 }

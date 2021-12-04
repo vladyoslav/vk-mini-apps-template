@@ -5,20 +5,16 @@ import {
   SimpleCell,
   SplitCol
 } from '@vkontakte/vkui'
-import { transition, useLocation } from '@unexp/router'
 import { NavigationItem } from '../../types'
+import { useRouter } from '@cteamdev/router'
 
 type NavigationMenuProps = {
   items: NavigationItem[]
 }
 
 export const NavigationMenu: React.FC<NavigationMenuProps> = ({ items }: NavigationMenuProps) => {
-  const { pathname } = useLocation()
-
-  const view: string = '/' + pathname.split('/')[1]
-
-  console.log(pathname)
-  // const { view } = useDeserializedLocation()
+  const { state, replace } = useRouter()
+  const { view } = state
 
   return (
     <SplitCol width='280px' maxWidth='280px' spaced fixed>
@@ -29,7 +25,7 @@ export const NavigationMenu: React.FC<NavigationMenuProps> = ({ items }: Navigat
               key={item.to}
               before={item.icon}
               disabled={item.to === view}
-              onClick={() => item.to !== view && transition(item.to, { replace: true })}
+              onClick={() => item.to !== view && replace(item.to)}
               style={item.to === view ? { backgroundColor: 'var(--button_secondary_background)' } : {}}
             >
               {item.text}

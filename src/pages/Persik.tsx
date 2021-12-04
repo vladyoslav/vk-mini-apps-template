@@ -7,18 +7,16 @@ import {
   Placeholder,
   PanelProps
 } from '@vkontakte/vkui'
-import { Link } from '@unexp/router'
 import persikImage from '../assets/persik.png'
+import { useRouter } from '@cteamdev/router'
 
 export const Persik: React.FC<PanelProps> = ({ nav }: PanelProps) => {
+  const { back } = useRouter()
+
   return (
     <Panel nav={nav}>
       <PanelHeader
-        left={
-          <Link to={-1}>
-            <PanelHeaderBack />
-          </Link>
-        }
+        left={<PanelHeaderBack onClick={back} />}
       >
         Персик
       </PanelHeader>
