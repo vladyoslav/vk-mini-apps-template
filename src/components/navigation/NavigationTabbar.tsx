@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Tabbar, TabbarItem } from '@vkontakte/vkui'
 import { transition, useDeserializedLocation } from '@unexp/router'
 import { NavigationItem } from '../../types'
@@ -8,20 +8,16 @@ type NavigationTabbarProps = {
 }
 
 export const NavigationTabbar: React.FC<NavigationTabbarProps> = ({ items }: NavigationTabbarProps) => {
-  const { view } = useDeserializedLocation()
-  const a = useDeserializedLocation()
-  useEffect(() => {
-    console.log(a)
-  }, [a])
+  const { root } = useDeserializedLocation()
 
   return (
     <Tabbar>
       {items.map(item =>
         <TabbarItem
           key={item.to}
-          selected={item.to === view}
+          selected={item.to === root}
           text={item.text}
-          onClick={() => item.to !== view && transition(item.to)}
+          onClick={() => item.to !== root && transition(item.to)}
         >
           {item.icon}
         </TabbarItem>

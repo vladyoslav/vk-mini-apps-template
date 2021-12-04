@@ -1,6 +1,6 @@
 import React from 'react'
 import { Avatar, Group, Panel, PanelHeader, SimpleCell } from '@vkontakte/vkui'
-import { Link } from '@unexp/router'
+import { Link, transition } from '@unexp/router'
 import {
   Icon28BillheadOutline,
   Icon28ChevronRightOutline,
@@ -42,11 +42,12 @@ export const Home: React.FC<HomeProps> = (props: HomeProps) => {
             Покажи Персика!
           </SimpleCell>
         </Link>
-        <Link to='/?m=modal'>
-          <SimpleCell before={<Icon28BillheadOutline />}>
-            Покажи модальную карточку
-          </SimpleCell>
-        </Link>
+        <SimpleCell
+          before={<Icon28BillheadOutline />}
+          onClick={() => transition('/?m=modal')}
+        >
+          Покажи модальную карточку
+        </SimpleCell>
         <SimpleCell
           before={<Icon28CheckCircleOutline />}
           onClick={() => setDoneSnackbar('Это добрый снекбар')}

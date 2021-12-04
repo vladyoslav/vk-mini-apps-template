@@ -6,7 +6,7 @@ import {
   PlatformType
 } from '@vkontakte/vkui'
 import '@vkontakte/vkui/dist/vkui.css'
-import { View } from '@unexp/router'
+import { View, Root } from '@unexp/router'
 import { Home, Info, Persik } from './pages'
 import { Navigation } from './components/navigation'
 import { getPlatform } from './utils/getPlatform'
@@ -32,13 +32,17 @@ export const App: React.FC = () => {
       <AdaptivityProvider>
         <AppRoot>
           <Navigation>
-            <View nav='/'>
-              <Home nav='/' />
-              <Persik nav='/persik' />
-            </View>
-            <View nav='/info'>
-              <Info nav='/' />
-            </View>
+            <Root nav='/'>
+              <View nav='/'>
+                <Home nav='/' />
+                <Persik nav='/persik' />
+              </View>
+            </Root>
+            <Root nav='/info'>
+              <View nav='/'>
+                <Info nav='/' />
+              </View>
+            </Root>
           </Navigation>
         </AppRoot>
       </AdaptivityProvider>
