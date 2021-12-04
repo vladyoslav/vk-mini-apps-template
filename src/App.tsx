@@ -2,19 +2,22 @@ import React, { useEffect } from 'react'
 import {
   AdaptivityProvider,
   AppRoot,
-  ConfigProvider
+  ConfigProvider,
+  PlatformType
 } from '@vkontakte/vkui'
 import '@vkontakte/vkui/dist/vkui.css'
 import { View } from '@cteamdev/router'
 import { Home, Info, Persik } from './pages'
 import { Navigation } from './components/navigation'
-import { useSetAtomState } from '@mntm/precoil'
-import { vkUserAtom } from './store'
-import bridge, { UserInfo } from '@vkontakte/vk-bridge'
-import { Wrappers } from './components/wrappers/Wrappers'
+import { getPlatform } from './utils'
+import { useAtomValue, useSetAtomState } from '@mntm/precoil'
+import { currentSchemeAtom, vkUserAtom } from './store'
+import bridge, { AppearanceSchemeType, UserInfo } from '@vkontakte/vk-bridge'
 
 export const App: React.FC = () => {
+  const platform: PlatformType = getPlatform()
   const setVkUser = useSetAtomState(vkUserAtom)
+  const currentScheme: AppearanceSchemeType = useAtomValue(currentSchemeAtom)
 
   useEffect(() => {
     const load = async () => {
@@ -26,16 +29,20 @@ export const App: React.FC = () => {
   }, [])
 
   return (
-    <Wrappers>
-      <Navigation>
-        <View nav='/'>
-          <Home nav='/' />
-          <Persik nav='/persik' />
-        </View>
-        <View nav='/info'>
-          <Info nav='/' />
-        </View>
-      </Navigation>
-    </Wrappers>
+    <ConfigProvider platform={platform} scheme={currentScheme}>
+      <AdaptivityProvider>
+        <AppRoot>
+          <Navigation>
+            <View nav='/'>
+              <Home nav='/' />
+              <Persik nav='/persik' />
+            </View>
+            <View nav='/info'>
+              <Info nav='/' />
+            </View>
+          </Navigation>
+        </AppRoot>
+      </AdaptivityProvider>
+    </ConfigProvider>
   )
 }
