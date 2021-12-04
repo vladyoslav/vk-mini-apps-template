@@ -1,14 +1,10 @@
 import React from 'react'
-import { Group, Panel, PanelHeader, Placeholder } from '@vkontakte/vkui'
+import { Group, Panel, PanelHeader, PanelProps, Placeholder } from '@vkontakte/vkui'
 import { Icon56GhostOutline } from '@vkontakte/icons'
 
-type InfoProps = {
-  nav: string
-}
-
-export const Info: React.FC<InfoProps> = (props: InfoProps) => {
+export const Info: React.FC<PanelProps> = ({ nav }: PanelProps) => {
   return (
-    <Panel nav={props.nav}>
+    <Panel nav={nav}>
       <PanelHeader>Инфо</PanelHeader>
       <Group>
         <Placeholder

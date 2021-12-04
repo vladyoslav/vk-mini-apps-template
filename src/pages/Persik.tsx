@@ -4,18 +4,15 @@ import {
   Panel,
   PanelHeader,
   PanelHeaderBack,
-  Placeholder
+  Placeholder,
+  PanelProps
 } from '@vkontakte/vkui'
 import { Link } from '@unexp/router'
 import persikImage from '../assets/persik.png'
 
-type PersikProps = {
-  nav: string
-}
-
-export const Persik: React.FC<PersikProps> = (props: PersikProps) => {
+export const Persik: React.FC<PanelProps> = ({ nav }: PanelProps) => {
   return (
-    <Panel nav={props.nav}>
+    <Panel nav={nav}>
       <PanelHeader
         left={
           <Link to={-1}>
