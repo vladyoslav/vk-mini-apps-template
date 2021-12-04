@@ -1,10 +1,9 @@
-import bridge, { AnyReceiveMethodName, AppearanceSchemeType, VKBridgeEvent } from '@vkontakte/vk-bridge'
-import { currentSchemeAtom } from './store'
+import bridge, { AnyReceiveMethodName, VKBridgeEvent } from '@vkontakte/vk-bridge'
 
 bridge.subscribe((e: VKBridgeEvent<AnyReceiveMethodName>) => {
   if (e.detail.type === 'VKWebAppUpdateConfig') {
-    const scheme: AppearanceSchemeType = e.detail.data.scheme || 'client_light'
-    currentSchemeAtom.set(scheme)
+    const scheme: string = e.detail.data.scheme || 'client_light'
+    document.body.setAttribute('scheme', scheme)
   }
 })
 

@@ -10,14 +10,13 @@ import { View } from '@cteamdev/router'
 import { Home, Info, Persik } from './pages'
 import { Navigation } from './components/navigation'
 import { getPlatform } from './utils'
-import { useAtomValue, useSetAtomState } from '@mntm/precoil'
-import { currentSchemeAtom, vkUserAtom } from './store'
-import bridge, { AppearanceSchemeType, UserInfo } from '@vkontakte/vk-bridge'
+import { useSetAtomState } from '@mntm/precoil'
+import { vkUserAtom } from './store'
+import bridge, { UserInfo } from '@vkontakte/vk-bridge'
 
 export const App: React.FC = () => {
   const platform: PlatformType = getPlatform()
   const setVkUser = useSetAtomState(vkUserAtom)
-  const currentScheme: AppearanceSchemeType = useAtomValue(currentSchemeAtom)
 
   useEffect(() => {
     const load = async () => {
@@ -29,7 +28,7 @@ export const App: React.FC = () => {
   }, [])
 
   return (
-    <ConfigProvider platform={platform} scheme={currentScheme}>
+    <ConfigProvider platform={platform}>
       <AdaptivityProvider>
         <AppRoot>
           <Navigation>
