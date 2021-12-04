@@ -11,14 +11,13 @@ import {
   Icon28ArticleOutline
 } from '@vkontakte/icons'
 import { UserInfo } from '@vkontakte/vk-bridge'
-import { useAtomValue, useSetAtomState } from '@mntm/precoil'
-import { popoutAtom, vkUserAtom } from '../store/atoms'
-import { setDoneSnackbar, setErrorSnackbar } from '../hooks'
+import { useAtomValue } from '@mntm/precoil'
+import { vkUserAtom } from '../store/atoms'
+import { setDoneSnackbar, setErrorSnackbar, setPopout } from '../hooks'
 import { TestActionSheet, TestAlert } from '../popouts'
 
 export const Home: React.FC<PanelProps> = ({ nav }: PanelProps) => {
   const vkUser: UserInfo = useAtomValue(vkUserAtom)
-  const setPopout = useSetAtomState(popoutAtom)
   const ref: Ref<HTMLElement> = useRef<HTMLElement>(null)
 
   return (
